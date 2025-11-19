@@ -8,7 +8,9 @@
   "scripts": {
     "build": "tsup"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,7 +25,9 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.4.0"
   }
 }
