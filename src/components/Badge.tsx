@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../lib/utils"
 
 const badgeVariants = cva(
-    "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-auto",
+    "inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-auto",
     {
         variants: {
             variant: {
@@ -18,9 +18,17 @@ const badgeVariants = cva(
                 outline:
                     "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
             },
+            tone: {
+                primary: "bg-gradient-to-r from-purple-500 to-pink-500",
+                secondary: "bg-gray-700 text-white",
+                danger: "bg-red-600 text-white",
+                success: "bg-green-600 text-white",
+                none: ""
+            }
         },
         defaultVariants: {
             variant: "default",
+            tone: "primary",
         },
     }
 )
@@ -28,6 +36,8 @@ const badgeVariants = cva(
 function Badge({
     className,
     variant,
+    tone,
+    color,
     asChild = false,
     ...props
 }: React.ComponentProps<"span"> &
@@ -37,7 +47,7 @@ function Badge({
     return (
         <Comp
             data-slot="badge"
-            className={cn(badgeVariants({ variant }), className)}
+            className={cn(badgeVariants({ variant, tone }), color && color !== "none" && `bg-${color}`, className)}
             {...props}
         />
     )
