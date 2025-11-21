@@ -27,9 +27,6 @@ const cardVariant = cva(
     }
 )
 
-nxhost_user
-rR3w4kG8
-
 function Card({ className, variant, tone, rounded, ...props }: React.ComponentProps<"div"> & VariantProps<typeof cardVariant>) {
     return (
         <div 

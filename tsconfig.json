@@ -8,7 +8,10 @@
     "moduleResolution": "Node",
     "target": "ESNext",
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": false,
+    "isolatedModules": false, 
   },
   "include": ["src"]
 }
