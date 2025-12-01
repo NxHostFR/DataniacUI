@@ -9,9 +9,6 @@
     "target": "ESNext",
     "skipLibCheck": true,
     "strict": true,
-    "emitDeclarationOnly": true,
-    "declarationMap": false,
-    "isolatedModules": false, 
   },
   "include": ["src"]
 }
